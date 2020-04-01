@@ -309,7 +309,7 @@
 <p>tips：这个Git Bash下载下来就相当于Linux中的终端窗口了，以后我们就用这个来打开终端操作命令。</p>
 <p>#第二步打开git bash 安装Hexo</p>
 <h2 id="安装npm镜像cnpm"><a href="#安装npm镜像cnpm" class="headerlink" title="安装npm镜像cnpm"></a>安装npm镜像cnpm</h2><p>安装hexo博客框架，需要借助npm包管理器来安装，国内镜像安装比较慢，先用npm下载cnpm，就是淘宝源，利用淘宝源来安装加快下载速度。（npm是在node安装时候安装好的）</p>
-<p>输入命令：<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="noopener">https://registry.npm.taobao.org</a></p>
+<p>输入命令：<br>npm install -g cnpm –registry=<a href="https://registry.npm.taobao.org(registry前面是两个横-)" target="_blank" rel="noopener">https://registry.npm.taobao.org(registry前面是两个横-)</a></p>
 <p>##cnpm安装hexo</p>
 <p>输入命令：<br>cnpm install -g hexo-cli</p>
 <p>##建立一个博客<br>{pwd 可以显示所在的文件夹<br> ls -l 可以显示文件夹中的文件目录}</p>
@@ -329,19 +329,18 @@
 <p>8.hexo g 生成（g:generate）</p>
 <p>9.hexo s(s:server.现在有个问题，就是hexo s 正常按Ctrl+C就是停止本地服务，但是不好使)</p>
 <p>#第三步部署到GitHub上</p>
-<h2 id="下载github-插件hexo-deployer-git"><a href="#下载github-插件hexo-deployer-git" class="headerlink" title="下载github 插件hexo-deployer-git"></a>下载github 插件hexo-deployer-git</h2><p>输入命令：<br>cnpm insatll hexo-deployer-git –save（在这里我的电脑总是报错，说是平台不匹配，弄了很久，实在没办法了，我把安装的node删除了，重新安装的，因为之前安装的时候有个步骤不是默认安转的，我也不知道有没有影响，安装完成后，在执行上面命令还是报错，我查了说是问题不大，接着执行下面的命令就行）<br>若是显示错误：可以尝试输入命令：<br>cnpm install（具体原因不知道，没重新安装之前我也试了，不好使。安装后我又试了，又好使了，不知道是不是它的原因）</p>
+<h2 id="下载github-插件hexo-deployer-git"><a href="#下载github-插件hexo-deployer-git" class="headerlink" title="下载github 插件hexo-deployer-git"></a>下载github 插件hexo-deployer-git</h2><p>输入命令：<br>cnpm insatll hexo-deployer-git –save（save前两的横-。。。。在这里我的电脑总是报错，说是平台不匹配，弄了很久，实在没办法了，我把安装的node删除了，重新安装的，因为之前安装的时候有个步骤不是默认安转的，我也不知道有没有影响，安装完成后，在执行上面命令还是报错，我查了说是问题不大，接着执行下面的命令就行）<br>若是显示错误：可以尝试输入命令：<br>cnpm install（具体原因不知道，没重新安装之前我也试了，不好使。安装后我又试了，又好使了，不知道是不是它的原因）</p>
 <h2 id="设置-config-yml文件"><a href="#设置-config-yml文件" class="headerlink" title="设置-config.yml文件"></a>设置-config.yml文件</h2><p>1.-config.yml文件在blog目录下<br>  可以用 ls -l 查看blog文件夹</p>
 <p>2.vim -config.yml 编辑文件</p>
 <p>3.拉到最下面deploy哪里，修改填写以下内容<br>  type：空格git<br>  repo：空格GitHub上仓库的地址（这个需要有个github账号，应该先申请一下，在新建个仓库）<br>  branch: 空格master</p>
 <p>4.ESC键-&gt;:wq 保存并退出(按ESC键，在最下面显示光标位置输入 :wq)</p>
 <p>##设置秘钥<br>因为出了很多错误:我还执行了一些别的操作（我看的codesheep视频没提到的）</p>
-<p>git config –global user.name’我写的是我GitHub账号名’<br>git config –global user.email’github账号的邮箱我写的是qq@.com’<br>设置完可输入一下命令检查：是否设置成功<br>git config –global user.name<br>git config –global user.emai<br>还设置了秘钥，也不知道我最后用没用上<br>ssh-keygen -t rsa -C “youremail” 不断回车，最后生成.ssh文件</p>
+<p>git config –global user.name’我写的是我GitHub账号名’（global前两个横-）<br>git config –global user.email’github账号的邮箱我写的是<a href="mailto:6461216@qq.com">6461216@qq.com</a>‘<br>设置完可输入一下命令检查：是否设置成功<br>git config –global user.name<br>git config –global user.emai<br>还设置了秘钥，也不知道我最后用没用上<br>ssh-keygen -t rsa -C “youremail” 不断回车，最后生成.ssh文件</p>
 <p>(ssh是一个密匙，id_rsa是这台电脑的私人秘钥，注意保密；id_rsa.pub是公共秘钥，需要和Github中的设置匹配，这样就可以通过git上传部署到github上)这句话是我查到的</p>
 <p>打开.ssh文件中的id_rsa.pub文件，复制其中的信息。<br>在Github中找到Settings，找到SSH and GPG keys一项并点击New SSH key，粘贴刚才复制的秘钥信息</p>
 <p>最后可以回到git bash中检查<br>输入命令：<br>ssh -T <a href="mailto:git@github.com">git@github.com</a></p>
 <p>##部署</p>
 <p>输入命令：<br>hexo d(d:deploy)</p>
-<p>#登录可查看</p>
 
       
 
